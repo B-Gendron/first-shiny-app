@@ -48,8 +48,10 @@ server <- function(session, input, output) {
       geom_line(aes_string("year", variable_selected(), color = "place_name")) +
       labs(title = plot_title()) +
       theme(legend.position = legend_position())
-    
-    
+  })
+  
+  output$mytable <- DT::renderDataTable({
+    DT::datatable(unemp, options = list(lengthMenu = c(5, 30, 50), pageLength = 5))
   })
   
 }

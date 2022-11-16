@@ -49,6 +49,7 @@ ui <- function(request){
         # shows the plot using g2r
         tabsetPanel(
           tabPanel("ggplot version", plotOutput("unemp_plot")),
+          tabPanel("employment data table", DT::dataTableOutput("mytable")),
         )
       )
     )
